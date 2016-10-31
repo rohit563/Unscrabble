@@ -7,7 +7,13 @@
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
   <%= form_tag do %>
-  Form contents
+  <%= label :board, :l1, 'l1' %>
+  <%= text_field :board, 'l1' %>
+  <br>
+  <br>
+  <%= submit_tag 'Save Changes' %>
+  
+  
   <% end %>
   
   
