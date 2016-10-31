@@ -1,0 +1,1296 @@
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:30:00 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.5) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (10.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20161031032932)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161031032932"]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:30:23 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 22ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:33:50 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 710ms (Views: 685.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 173.28.192.130 at 2016-10-31 03:33:51 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:41:30 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 4849ms (Views: 4833.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 173.28.192.130 at 2016-10-31 03:41:35 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 173.28.192.130 at 2016-10-31 03:41:35 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/index" for 173.28.192.130 at 2016-10-31 03:41:43 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 160ms (Views: 158.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 173.28.192.130 at 2016-10-31 03:42:26 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 03:42:39 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 173.28.192.130 at 2016-10-31 03:42:50 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p2af764FUz5dLvGP1gCdlTjhi/RcIxtSUuU/19Jq6XgRsiSU0kYEv0KgzY62yrynGeiVhiHf21kVBV06GW+mlQ==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rohit563@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "rohit563@gmail.com"], ["encrypted_password", "$2a$11$iPO8uqGRYNNHD8JBUkV.CemdV5r8M2.cdRWjPADGKVpin0ne9knjW"], ["created_at", "2016-10-31 03:42:50.204260"], ["updated_at", "2016-10-31 03:42:50.204260"]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-10-31 03:42:50.220269"], ["current_sign_in_at", "2016-10-31 03:42:50.220269"], ["last_sign_in_ip", "173.28.192.130"], ["current_sign_in_ip", "173.28.192.130"], ["sign_in_count", 1], ["updated_at", "2016-10-31 03:42:50.221354"], ["id", 1]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 234ms (ActiveRecord: 24.2ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:42:50 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:42:53 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"13fhXCsSKGszOUZ+rohVP/2bLtSCPpm2vCf2OLO4Nelho1onV1F/6iy3en/OQnQN3JIwpv/CWb37x5TVeL16BA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:42:53 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:43:04 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TuSu1rInv+7KdvnNxsti3FihJW1f3SM2uUQcw3GyBi7u/R7GBte4vbt/mmcAXd9ptTQJ9aoXEmEGPjo5mreAMw==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "rohit563@gmail.com"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-10-31 03:43:04.365667"], ["sign_in_count", 2], ["updated_at", "2016-10-31 03:43:04.367170"], ["id", 1]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 162ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:43:04 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:43:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CQ2Gxo63V57fgHFfF1QNCjtfd7uXVM63UTKxAWfcSldaH3U2q4x1/zvaKFZu6fEebE1I9foffwTG1ylYF1JaWA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:43:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:48:21 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 473ms (Views: 457.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:48:25 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jNv7INn54nZjaAI8+f46el4TH157+J7+myVcMmH6EvNO+yVhWvtDNe7q57EqfV6fujDO4gjJ37FdhfQvxuouwA==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:43:04.365667"], ["current_sign_in_at", "2016-10-31 03:48:25.457688"], ["sign_in_count", 3], ["updated_at", "2016-10-31 03:48:25.460947"], ["id", 1]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 221ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:48:25 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:48:30 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9flzXIr9NMcA0eGDECwrsrEETg7nPhjAC4+E4yOyCvsocnVP8lrGXtJMwq3HpNuuI7U0EF67n0RmETKCNuMZdg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:48:30 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:48:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D3lYh1AQYV/pzH6yvjaA9rNYx4Nc0Banb31D00A6j6TrNwgmzG22ucj1w/2IdbCFkmwKaLfyuSvvo+6fH7Arfg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+Completed 401 Unauthorized in 159ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D3lYh1AQYV/pzH6yvjaA9rNYx4Nc0Banb31D00A6j6TrNwgmzG22ucj1w/2IdbCFkmwKaLfyuSvvo+6fH7Arfg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (4.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 190ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:53:58 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 2538ms (Views: 2518.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-333f85677c43fe16694277c4eaaae56f11c3df5284f963f853371a7c3f801095.css?body=1" for 173.28.192.130 at 2016-10-31 03:54:01 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 03:54:01 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:04 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"voGgNl9xf9jtIaBuuV/sjEDw45Y7J5iUBh5tTEdhm5daz/CXwwyoPswYHSGPHNz/YcQufdAFNxiGwMAAGOs/TQ==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"voGgNl9xf9jtIaBuuV/sjEDw45Y7J5iUBh5tTEdhm5daz/CXwwyoPswYHSGPHNz/YcQufdAFNxiGwMAAGOs/TQ==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (5.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 03:54:04 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:06 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e0IF9fOtCsbTBZ4mC91VoOIC8F5CsIM9Kp+Ccrs1jxyfDFVUb9DdIPI8I2k9nmXTwzY9tamSLLGqQS8+5L8rxg==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e0IF9fOtCsbTBZ4mC91VoOIC8F5CsIM9Kp+Ccrs1jxyfDFVUb9DdIPI8I2k9nmXTwzY9tamSLLGqQS8+5L8rxg==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 209ms (Views: 207.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 03:54:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"As5d9jr1N/sbmbiwM6b9efWNQoAc1uibaErO/aC0as3mgA1XpojgHTqgBf8F5c0K1LmPa/f0RxfolGOx/z7OFw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"As5d9jr1N/sbmbiwM6b9efWNQoAc1uibaErO/aC0as3mgA1XpojgHTqgBf8F5c0K1LmPa/f0RxfolGOx/z7OFw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 03:54:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AhagxMG8UKBdZAhnCdjMnOIZJBau974cu7ZxkOPYpVnmWPBlXcGHRnxdtSg/m/zvwy3p/UXVEZA7aNzcvFIBgw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AhagxMG8UKBdZAhnCdjMnOIZJBau974cu7ZxkOPYpVnmWPBlXcGHRnxdtSg/m/zvwy3p/UXVEZA7aNzcvFIBgw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:10 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qfEmf+ZbVTNpESuiFWXq1FZQ1Ie+8As8c52sYPxrsjxNv3beeiaC1Ugolu0jJtqnd2QZbFXSpLDzQwEso+EW5g==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qfEmf+ZbVTNpESuiFWXq1FZQ1Ie+8As8c52sYPxrsjxNv3beeiaC1Ugolu0jJtqnd2QZbFXSpLDzQwEso+EW5g==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:11 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Luno82kkBcbqQYh5GHG/4NEz6a+dSSh4fyFJa+BPZz/Kp7hS9VnSIMt4NTYuMo+T8AckRHZrh/T//+Qnv8XD5Q==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Luno82kkBcbqQYh5GHG/4NEz6a+dSSh4fyFJa+BPZz/Kp7hS9VnSIMt4NTYuMo+T8AckRHZrh/T//+Qnv8XD5Q==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:12 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7YnaQ4hEsi3AXoFO0vnFQGaOvUCaRbwqhdHLt6ubHbH+HfIklzFLpY4x0oNCNdmIK73HulLuXwqyepigSTIrA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7YnaQ4hEsi3AXoFO0vnFQGaOvUCaRbwqhdHLt6ubHbH+HfIklzFLpY4x0oNCNdmIK73HulLuXwqyepigSTIrA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:12 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X5R5EftiXLTKcxuCT9XsvQO7oJuAcswNYqQvIur/aJ672imwZx+LUutKps15ltzOIo9tcGtQY4HieoJutXXMRA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X5R5EftiXLTKcxuCT9XsvQO7oJuAcswNYqQvIur/aJ672imwZx+LUutKps15ltzOIo9tcGtQY4HieoJutXXMRA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:13 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7vyHM1Sen3AjUr5DrS3Yjvnsuvcs4nT6QBMNvjHRpM0KsteSyONIlgJrAwybbuj92Nh3HMfA23bAzaDyblsAFw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7vyHM1Sen3AjUr5DrS3Yjvnsuvcs4nT6QBMNvjHRpM0KsteSyONIlgJrAwybbuj92Nh3HMfA23bAzaDyblsAFw==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:14 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rVfg13HampqC/YC78NkwmVvLMReGRXKPCpSGbD1e8LZJGbB27adNfKPEPfTGmgDqev/8/G1n3QOKSisgYtRUbA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rVfg13HampqC/YC78NkwmVvLMReGRXKPCpSGbD1e8LZJGbB27adNfKPEPfTGmgDqev/8/G1n3QOKSisgYtRUbA==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (4.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:15 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FENGASe4W0FJs94Il+qmADsVgrVPinIj+thCl5M3PE/wDRagu8WMp2iKY0ehqZZzGiFPXqSo3a96Bu/bzL2YlQ==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FENGASe4W0FJs94Il+qmADsVgrVPinIj+thCl5M3PE/wDRagu8WMp2iKY0ehqZZzGiFPXqSo3a96Bu/bzL2YlQ==", "username"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "user"=>{"remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:22 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 199ms (Views: 197.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:54:24 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nAIzDSS4YROPmu5ACCxaNedSj+8fZQJm+JHYHmIEfNB4TGOsuMW29a6jUw8+b2pGxmZCBPRHrep4T3VSPY7YCg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:48:25.457688"], ["current_sign_in_at", "2016-10-31 03:54:24.335548"], ["sign_in_count", 4], ["updated_at", "2016-10-31 03:54:24.337586"], ["id", 1]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 189ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:54:24 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:54:26 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SP9+iBKyL/wTAIxCgrh+Xxy0BgI1IJuwVPqUG/48XXt3Ul/Vh+n3QJ0ZMYMvR5Oasbbn89syFARIOvumzjIGpg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:54:27 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:55:04 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:55:06 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KG78Hde35ZuNhmU8GR0cE2T7Cqv7qkeq6ygp8KoQwT6BVPhSrL78rAJldVDnyy0joNigdhsP0QPYGQoLCzZqMg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:54:24.335548"], ["current_sign_in_at", "2016-10-31 03:55:06.246149"], ["sign_in_count", 5], ["updated_at", "2016-10-31 03:55:06.248063"], ["id", 1]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 163ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:55:06 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:55:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FWoAWMDM43nic4zhSyqUZKk7trLlzSJ3R22543C81OBIlEsst4fmQevXgcvUcafsl/eIFZeV7x8Ahf4ncn9JiA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:55:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:55:10 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RuwEuF0pg2iaRBZAWOBuFCNW/dShT8Ez73osUQJxSxGs1MAubGDCWtKeVmTsZPC7O5JERI+ecQ9aPTATyUf7A==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:55:06.246149"], ["current_sign_in_at", "2016-10-31 03:55:10.478176"], ["sign_in_count", 6], ["updated_at", "2016-10-31 03:55:10.479973"], ["id", 1]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 167ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:55:10 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:55:11 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"czIJfeWXVtYVl9grX3Zz/w7UlJoxyAddegqvuj0VVd82cG90OD17cQFVwiSF0DimGsHYM63BSBlzxlYKLPRS4w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:55:12 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:56:03 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:56:05 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:56:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5UcNc97bmB2B6VpwRx+UILnnbNZd85hJw0+uVIroVv0OHgr7x6u/8SYMQkt2U0Q2TubiLwNGPam8bthueeWmA==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:55:10.478176"], ["current_sign_in_at", "2016-10-31 03:56:07.459585"], ["sign_in_count", 7], ["updated_at", "2016-10-31 03:56:07.462625"], ["id", 1]]
+  [1m[36m (17.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 213ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:56:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:56:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3ZGCVq4ZygUnfNCLSEjzxdTgcSCcNmfZkzHI3fFs2JFWbGu4ygLbwK2TUceaWeXeU8ypPRpegjZ1Bw+IaApJxg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:56:08 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:57:39 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:57:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:21 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:58:25 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EVkF2/oZiKu7XW41OlEmxY+JRcQcxwGHqUpA+7fbRw8EzD6i5fQ6n7ESDU6yapTSCtZzp6Uo8dzc3ye+Exxw6A==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:56:07.459585"], ["current_sign_in_at", "2016-10-31 03:58:26.098482"], ["sign_in_count", 8], ["updated_at", "2016-10-31 03:58:26.100111"], ["id", 1]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 159ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:26 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:58:28 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VCGaTiZkOiT1i4EF1EUYEMEq3nIbYOO3tPhIjOdVkTnk6auaHcUnS8wCtTD+WfcmmR58VOImy1GtJ2i01p+6bg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:28 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:58:29 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUWWNUzYmWLWh/LUmWK2WTxGrryq9Ps6rimOHAesnAT4Cbjqu+8nja0JNTTjnqV/e3OLxfZ6fcQ/u53YzjAGkQ==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:58:26.098482"], ["current_sign_in_at", "2016-10-31 03:58:30.019567"], ["sign_in_count", 9], ["updated_at", "2016-10-31 03:58:30.020968"], ["id", 1]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 156ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:30 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:58:31 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YFPAu8UwCc112+IfjHDV0yxX+YMFkoqDaoAVrYm6ECxpmcjoXAijSmfXmBNLTc4RnED0ExND4HMgBqDWivAJ0g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:31 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:58:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GS5zOcouzpHH4H1ZROYt+Lme5MolsnRjmLVZQRzG8CvY5/dzfCedTV+gjptEEv5HfBAJ055ZcJaogu+3mmBRzQ==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:58:30.019567"], ["current_sign_in_at", "2016-10-31 03:58:33.267861"], ["sign_in_count", 10], ["updated_at", "2016-10-31 03:58:33.269364"], ["id", 1]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 177ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:58:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bnj1+5f7L/5ccsae3sXNgd/SEzBXaKmQiVQ0gRqzYzEKSSxAEXAOiD8C6p17IOj7OHAYJJInBsPfPXYOyB9sow=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:58:36 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pJAJy4HnXFa7xnccFeWhDJn2yZdNCTp7Zf0/tmHeNzhyVeX15OJ80U0K4BK8mUjMw++0RflKHaugUHGvonE9qw==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:58:33.267861"], ["current_sign_in_at", "2016-10-31 03:58:36.393181"], ["sign_in_count", 11], ["updated_at", "2016-10-31 03:58:36.394614"], ["id", 1]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 272ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:36 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:58:38 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zXiXmtlVwKaQTRBfhvpeLx1FJDn2iQybpi5gFTbvbsICVJksi1GZpy2AvPJdSti29oo/R80l7K5jv0buUp4SUQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 80ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:38 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 03:58:39 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4rG5EkVON4Ddud08PmiVoqgr0g1p/L8WXwnKGyM+ygIdJ26DLbmk61byRZEnrwesIx/fe1hGPhgvKFSd1njrRg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:58:36.393181"], ["current_sign_in_at", "2016-10-31 03:58:40.040902"], ["sign_in_count", 12], ["updated_at", "2016-10-31 03:58:40.042473"], ["id", 1]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 227ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:40 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 173ms (Views: 172.7ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 03:58:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uJEfAllNvNW15JP5476eMMjNGs1qnEqRnRT9CU+dFVv0Xsoxnce8Z1aLLfeh3G4luRgRQ47JOnGDkGktF57JGQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:58:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 03:59:56 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 04:00:09 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iUm6ePzn0AfXoUL08hBdzkUWqi+LpBcCbcPly8NNANiXU9bL6LFM0zcSgNVBWncJ5IaQV4rk8acKAkCzn1ZHLw==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 03:58:40.040902"], ["current_sign_in_at", "2016-10-31 04:00:10.183583"], ["sign_in_count", 13], ["updated_at", "2016-10-31 04:00:10.185526"], ["id", 1]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 227ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:00:10 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 04:00:12 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fR+qHy5okC9AVqFYpjjmA/p8BtldgknDWDptPGyutKX1GAoib+X/Yie7yOnHqrn3QjugbgsCJrB3MUAAr08K+w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:00:12 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:01:29 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 04:01:32 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XZqhwYyV8ntXZLapcG3q358CiFpT8kIB31vm700eTFYFfPYyQrdZZirIan7lHzs5P/2JnVKUkOt7urQh8SD0jg==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 04:00:10.183583"], ["current_sign_in_at", "2016-10-31 04:01:32.976163"], ["sign_in_count", 14], ["updated_at", "2016-10-31 04:01:32.977806"], ["id", 1]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 158ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:01:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 04:01:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pjND3enI/aom+iyo8k3lLQl73AIB0X068hxkFWnMLuHfXtCqNVf04eSn9rk+PtxyRusx0LrBrUtK0VWQ28X5kQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:01:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 58ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:02:39 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 04:02:42 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/cJqrJvm/uwdRyzfRk3q1vRl2zMMkS1KdVVotEWUzYb1NBD7BuyeS69/+oBq3A0mLK5ZkVJr1E7ZZBPDG8UiqA==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 04:01:32.976163"], ["current_sign_in_at", "2016-10-31 04:02:43.073258"], ["sign_in_count", 15], ["updated_at", "2016-10-31 04:02:43.075669"], ["id", 1]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 160ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:02:43 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 04:02:44 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eQvnj7W0gcowe+W7zYvmRiQsrTif4MsPrVKKKvDD8WWmebXxBiGEoq56RnC3pf2FpIZl/f6nO/HbiV4TKEw0uQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:02:44 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:03:42 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 109ms (Views: 106.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:03:45 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:07:48 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:08:20 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:08:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:08:52 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:09:25 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:10:32 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:10:34 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:10:36 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:10:47 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:10:57 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:11:16 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1899ms (Views: 1897.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-d91788be2994b6df8a70e87f31e488adb9d3d59bba22e86cca0c8a4572672a1b.css?body=1" for 173.28.192.130 at 2016-10-31 04:11:18 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:11:31 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 2098ms (Views: 2096.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-3475eed3a268f6ad1dbd75ccf585a49ef7f81bcbcdf808c2a822cb0fb6cdb6b5.css?body=1" for 173.28.192.130 at 2016-10-31 04:11:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:11:53 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 2735ms (Views: 2732.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-d4bda7a2bef5b752e870bf7b5989f53f335376b02ac5b4303eddf305eda9cd94.css?body=1" for 173.28.192.130 at 2016-10-31 04:11:55 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:12:35 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 2248ms (Views: 2245.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-a7ed7b1ecffc79266237200ebc6aa27e14c8b49465bee1994bea142bf9262959.css?body=1" for 173.28.192.130 at 2016-10-31 04:12:37 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:13:13 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 2837ms (Views: 2835.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-a9f5504ef32ade8a56374cceb7b32da3efd8a65623723907adf29c5ef82cb974.css?body=1" for 173.28.192.130 at 2016-10-31 04:13:16 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:14:18 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 04:14:19 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:14:43 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:15:17 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:15:18 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:16:40 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 144ms (Views: 142.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:17:07 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.8ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:19:29 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.9ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 2768ms (Views: 2766.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e2b0029ce9e3b50ee9913589627f8899f0472f7e14de8894dd5300bd6b87bb3d.css?body=1" for 173.28.192.130 at 2016-10-31 04:19:32 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 04:19:33 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:19:56 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 1922ms (Views: 1920.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-26fa5134158a91ab8dd13332f0e9f3aae1a33fab13dbedd4429712e85bd96eb4.css?body=1" for 173.28.192.130 at 2016-10-31 04:19:58 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 04:19:59 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:20:20 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:21:15 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 2122ms (Views: 2120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-940c40b309b9ac4305bf461fec51c4385f2a2122f62404864c29d739f3074b4e.css?body=1" for 173.28.192.130 at 2016-10-31 04:21:17 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 04:21:18 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 04:21:39 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 1920ms (Views: 1918.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-f3ae40e66038a0d01d40cc20c69824a5a02e98af9dac4faaa95657ed5b3ea33b.css?body=1" for 173.28.192.130 at 2016-10-31 04:21:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 04:21:42 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 173.28.192.130 at 2016-10-31 04:22:10 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 04:22:25 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.0ms)
