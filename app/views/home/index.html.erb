@@ -6,9 +6,13 @@
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
-  <%= form_tag do %>
+  <%= form_tag authenticated_root do %>
   <%= label :board, :l1, 'l1' %>
-  <%= text_field :board, 'l1' %>
+  <%= text_field :board, 'l1' %><%= text_field :board, 'l2' %><%= text_field :board, 'l3' %><%= text_field :board, 'l4' %><br>
+  <%= text_field :board, 'l5' %><%= text_field :board, 'l6' %><%= text_field :board, 'l7' %><%= text_field :board, 'l8' %><br>
+  <%= text_field :board, 'l9' %><%= text_field :board, 'l10' %><%= text_field :board, 'l11' %><%= text_field :board, 'l12' %><br>
+  <%= text_field :board, 'l13' %><%= text_field :board, 'l14' %><%= text_field :board, 'l15' %><%= text_field :board, 'l16' %><br>
+
   <br>
   <br>
   <%= submit_tag 'Save Changes' %>
