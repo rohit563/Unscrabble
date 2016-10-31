@@ -8,4 +8,11 @@ class BoardControllerController < ApplicationController
         flash[:notice] = "Successfully created!"
     end
     
+    def tokenize
+        @letters = Array.new(4)
+        puts (params[:letters])
+        flash[:notice] = params[:letters]
+        redirect_to :back
+    end
+    
 end
