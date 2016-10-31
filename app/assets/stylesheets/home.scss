@@ -57,6 +57,18 @@
 	  border-top-right-radius: 0;
 	}
 	
+	.btnThree {
+		margin-top: 10px;
+		padding: 10px 47px;
+	    text-transform: uppercase;
+	    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+	    font-weight: 400;
+	    -webkit-transition: all .3s ease-in-out;
+	    -moz-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    border-radius: 0;
+	}
+	
 	.btnTwo {
 		margin-top: 10px;
 		padding: 10px 129px;
