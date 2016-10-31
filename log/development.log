@@ -1312,3 +1312,97 @@ Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.0ms)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 06:26:35 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (61.7ms)
+Completed 200 OK in 603ms (Views: 588.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-9fb6a7bc602cef34f913a15c99357332c31da3420790a01d94c753086de2b296.css?body=1" for 173.28.192.130 at 2016-10-31 06:26:35 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 06:26:36 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 173.28.192.130 at 2016-10-31 06:26:38 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o+MD5TnDIoZDjx+fZ7T3tehIMpNYDPgFNNH3yUE0cla90KWU5bm4y5Y+s9weaykk4JiK/W3PjtvRtVfXZ/Kecw==", "user"=>{"email"=>"rohit563@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rohit563@gmail.com"]]
+  [1m[36m (1.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-10-31 04:02:43.073258"], ["current_sign_in_at", "2016-10-31 06:26:38.868358"], ["sign_in_count", 16], ["updated_at", "2016-10-31 06:26:38.871517"], ["id", 1]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 301ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 06:26:38 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.130 at 2016-10-31 06:26:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"I2/ZkfT51PJmNzTjBgEXmU+iHy7Y7CCSFz0iL27vBExANZw1IC7zPQCMooeGFP9CkVubMqd4BWOlsxbolNNXew=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.130 at 2016-10-31 06:26:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 06:26:41 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/password/new" for 173.28.192.130 at 2016-10-31 06:26:49 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 173.28.192.130 at 2016-10-31 06:26:52 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KqfU1mCagp5Wwx0NnHVvLHBZ8cQrJnZzD2S9otOrLHaofbOAxxiDHFtu0RDwQBczLEyJA4jWApD9P0DJpavlRQ==", "username"=>"rohit563@gmail.com", "commit"=>"Send"}
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 06:26:52 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/password" for 173.28.192.130 at 2016-10-31 06:27:05 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eyNkOMjKMHkcsJP/MxU0UQXeDB8eGwD1te8LZcsyVB35+QNub0gx+xEdX+JfIExOWct02L3rdBZHtPYOvTKdLg==", "username"=>"rohit563@gmail.com", "commit"=>"Send"}
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background.jpg" for 173.28.192.130 at 2016-10-31 06:27:05 +0000
+Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
