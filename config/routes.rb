@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    devise_scope :user do
    authenticated :user do
      root 'home#index', as: :authenticated_root
-     get '/board/tokenize' => 'board#tokenize'
+     get '/board/tokenize' => 'board_controller#tokenize'
    end
   
    unauthenticated do
