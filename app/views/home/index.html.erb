@@ -6,19 +6,24 @@
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
-  <%= form_tag  do %>
+  <!--<%= form_tag  do %>-->
 
-  <%= text_field :board, 'l1' %><%= text_field :board, 'l2' %><%= text_field :board, 'l3' %><%= text_field :board, 'l4' %><br>
-  <%= text_field :board, 'l5' %><%= text_field :board, 'l6' %><%= text_field :board, 'l7' %><%= text_field :board, 'l8' %><br>
-  <%= text_field :board, 'l9' %><%= text_field :board, 'l10' %><%= text_field :board, 'l11' %><%= text_field :board, 'l12' %><br>
-  <%= text_field :board, 'l13' %><%= text_field :board, 'l14' %><%= text_field :board, 'l15' %><%= text_field :board, 'l16' %>
-
+  <!--<%= text_field :board, 'l1' %><%= text_field :board, 'l2' %><%= text_field :board, 'l3' %><%= text_field :board, 'l4' %><br>-->
+  <!--<%= text_field :board, 'l5' %><%= text_field :board, 'l6' %><%= text_field :board, 'l7' %><%= text_field :board, 'l8' %><br>-->
+  <!--<%= text_field :board, 'l9' %><%= text_field :board, 'l10' %><%= text_field :board, 'l11' %><%= text_field :board, 'l12' %><br>-->
+  <!--<%= text_field :board, 'l13' %><%= text_field :board, 'l14' %><%= text_field :board, 'l15' %><%= text_field :board, 'l16' %>-->
+  
+  <%= form_tag url_for('/board/tokenize'), method: 'get' do%>
+    <%= text_field :letters, 'letters' %>
+    <%= submit_tag 'Submit Letters' %>
+  <% end %>  
+  
   <br>
   <br>
   <%= submit_tag 'Save Changes' %>
   
   
-  <% end %>
+  <!--<% end %>-->
   
   
   
