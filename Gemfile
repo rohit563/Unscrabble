@@ -10,6 +10,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.14'
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -39,7 +43,7 @@ gem 'devise'
 gem 'rename'
 
 group :development, :test do
-gem 'foreman'
+  gem 'foreman'
 end
 
 # Use ActiveModel has_secure_password
@@ -54,6 +58,11 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+end
+
+  
+group :coverage do
+  gem 'simplecov', :require => false
 end
 
 group :development do
