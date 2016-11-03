@@ -2332,3 +2332,64 @@ Cannot render console from 10.240.1.19! Allowed networks: 127.0.0.1, ::1, 127.0.
 
 Started GET "/assets/Background-ac4c54b6eb181f66b6128097122cab157a639815a918ee56284e21ac94608ecb.jpg" for 10.240.1.32 at 2016-11-03 20:22:59 +0000
 Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 64.134.172.134 at 2016-11-03 20:30:07 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 548ms (Views: 527.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/board_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-a9c852534c8ef59bf7dcf34741eef961d9e9cd9fbf6771274a62ac4aad52a3a8.css?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3d2b1085db6945c1ed2965f6b9561bfd4c3d4bfd17596a955c1ce8b4068f6b3f.css?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:08 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/board_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:09 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:09 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 64.134.172.134 at 2016-11-03 20:30:09 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background-ac4c54b6eb181f66b6128097122cab157a639815a918ee56284e21ac94608ecb.jpg" for 64.134.172.134 at 2016-11-03 20:30:11 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 64.134.172.134 at 2016-11-03 20:30:13 +0000
+Cannot render console from 64.134.172.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E1MmxEjwoY2HDdO5gCHtJpvCyJ5uJB88ox3/nQfVj/8p2A+QKLgKrnoOGjqAfe2/sgY7XLv1ZpTa0fJ8zfwyfw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E1MmxEjwoY2HDdO5gCHtJpvCyJ5uJB88ox3/nQfVj/8p2A+QKLgKrnoOGjqAfe2/sgY7XLv1ZpTa0fJ8zfwyfw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 0.0ms)

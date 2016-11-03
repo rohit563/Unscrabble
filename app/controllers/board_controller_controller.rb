@@ -12,7 +12,7 @@ class BoardControllerController < ApplicationController
         @letters = Array.new(4)
         puts (params[:letters])
         flash[:notice] = params[:letters]
-        redirect_to :back(request.parameters), :notice => "Post has been saved successfully."
+        # redirect_to :back(request.parameters), :notice => "Post has been saved successfully."
 
         # redirect_to :back
     end
