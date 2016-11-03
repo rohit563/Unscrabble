@@ -2137,3 +2137,198 @@ Completed 200 OK in 186ms (Views: 182.3ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/Background-ac4c54b6eb181f66b6128097122cab157a639815a918ee56284e21ac94608ecb.jpg" for 173.28.192.130 at 2016-11-02 04:44:20 +0000
 Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 129.255.225.236 at 2016-11-02 17:07:51 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 583ms (Views: 575.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/board_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3d2b1085db6945c1ed2965f6b9561bfd4c3d4bfd17596a955c1ce8b4068f6b3f.css?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/board_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-a9c852534c8ef59bf7dcf34741eef961d9e9cd9fbf6771274a62ac4aad52a3a8.css?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 129.255.225.236 at 2016-11-02 17:07:52 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/test-d4724d1451e9f0f5bc64fccf881b8a2d531cfa54bbaa58e0cb6db2128b9c0caa.jpg" for 129.255.225.236 at 2016-11-02 17:07:53 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started DELETE "/users/sign_out" for 129.255.225.236 at 2016-11-02 17:08:00 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pL4pbqEbg4BnkkA62wCme7ZN7Z83MRSCW41WTR7QZd2gaUICN3Qa81NwQF/3eVys+UbOyV0XpnTNvV5QRpaj+w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 59ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.255.225.236 at 2016-11-02 17:08:00 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 100ms (Views: 97.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/Background-ac4c54b6eb181f66b6128097122cab157a639815a918ee56284e21ac94608ecb.jpg" for 129.255.225.236 at 2016-11-02 17:08:01 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/users/sign_in" for 129.255.225.236 at 2016-11-02 17:08:22 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HoOuaYgiHbvuH4Gm0ZqrTLs0KVlljpcHTDVU+dtpUVEllsEFIm83hgnVdyQHgtHD6t5ntTPMEkc8xl1EFCnDPw==", "user"=>{"email"=>"charles-miles@uiowa.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "charles-miles@uiowa.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-11-02 17:08:22.360723"], ["current_sign_in_ip", "129.255.225.236"], ["sign_in_count", 2], ["updated_at", "2016-11-02 17:08:22.362288"], ["id", 2]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 292ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/" for 129.255.225.236 at 2016-11-02 17:08:22 +0000
+Cannot render console from 129.255.225.236! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 10.240.0.186 at 2016-11-03 20:22:53 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 622ms (Views: 602.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/board_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.206 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 10.240.1.32 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 10.240.1.15 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 10.240.0.206 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-a9c852534c8ef59bf7dcf34741eef961d9e9cd9fbf6771274a62ac4aad52a3a8.css?body=1" for 10.240.0.110 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3d2b1085db6945c1ed2965f6b9561bfd4c3d4bfd17596a955c1ce8b4068f6b3f.css?body=1" for 10.240.0.208 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.0.187 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.240.0.207 at 2016-11-03 20:22:54 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/board_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.1.19 at 2016-11-03 20:22:59 +0000
+Cannot render console from 10.240.1.19! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/Background-ac4c54b6eb181f66b6128097122cab157a639815a918ee56284e21ac94608ecb.jpg" for 10.240.1.32 at 2016-11-03 20:22:59 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

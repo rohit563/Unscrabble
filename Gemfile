@@ -11,7 +11,8 @@ group :development, :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.14'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :production do
@@ -73,3 +74,15 @@ group :development do
   gem 'spring'
 end
 
+# group :test, :development do
+#   gem 'cucumber-rails', :require => false
+#   # database_cleaner is not required, but highly recommended
+#   gem 'database_cleaner'
+# end
+
+group :test do
+  gem 'rspec-expectations'
+  gem 'cucumber-rails', :require=>false
+  gem 'capybara'
+  gem 'database_cleaner'
+end
