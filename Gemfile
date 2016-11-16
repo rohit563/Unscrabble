@@ -40,7 +40,7 @@ group :development, :test do
   gem 'foreman'
 end
 
-gem "bootstrap-sass", "~> 3.0.3.0"
+gem 'bootstrap-sass'
 
 group :production do
   gem 'pg'
