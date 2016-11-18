@@ -12,9 +12,15 @@ class BoardControllerController < ApplicationController
         @letters = Array.new(4)
         puts (params[:letters])
         flash[:notice] = params[:letters]
+        # add devise current_user.id add to params http://stackoverflow.com/questions/24101166/ruby-on-rails-and-devise-associating-id-from-one-table-to-a-foreign-key-id-in-an
         # redirect_to :back(request.parameters), :notice => "Post has been saved successfully."
 
         # redirect_to :back
+    end
+    
+    def solve
+        
+        
     end
     
 end

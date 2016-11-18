@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.9">
 <body id = "home">
+    <% if user_signed_in? %>
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -23,7 +24,8 @@
                     <a href="#">Save Game</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                    <!--<a href="#">Contact</a>-->
                 </li>
             </ul>
         </div>
@@ -36,7 +38,7 @@
                     <div class="col-lg-12">
                         <div class = "header">
                             <h1>Welcome to the Boggle Solver!</h1>
-                            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                            <!--<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        -->
                           </div>
                         
                         <!--<p>Find me in app/views/home/index.html.erb</p>-->
@@ -44,64 +46,69 @@
                           <!--<li>-->
                           <!--<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        -->
                           <!--</li>-->
-                          <!--<%= form_tag  do %>-->
+                          <%= form_tag ('/home/tokenize') do %>
                           
                           <div class = "holder">
                             <div class = "cells">
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%=  %>" size = "4" maxlength= "1" name= "letters[0]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[1]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[2]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[3]" style="text-align:center;" /> 
                             </div>
                           </div>
                            <div class = "holder">
                             <div class = "celss">
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%=  %>" size = "4" maxlength= "1" name= "letters[4]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[5]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%=  %>" size = "4" maxlength= "1" name= "letters[6]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[7]" style="text-align:center;" /> 
                             </div>
                           </div>
                            <div class = "holder">
                             <div class = "cells">
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[8]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[9]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[10]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[11]" style="text-align:center;" /> 
                             </div>
                           </div>
                            <div class = "holder">
                             <div class = "cell">
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
-                              <input type = "text" id = "text1" name = "text[0]" size = "4" maxlength= "1" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[12]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[13]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1" name= "letters[14]" style="text-align:center;" /> 
+                              <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1"name= "letters[15]"  style="text-align:center;" /> 
                             </div>
                           </div>
+                          <div class = "button">
+                              <%= button_to 'Submit', :controller =>'home', :action => 'tokenize', :method => :post, :remote => true %>
+                              <!--<input type="submit" value="Submit" onclick="return getLetters();">-->
+                          </div>
                           
-                          
-                          
-                          
-                          
-                          <!--<%= text_field :board, 'l1' %><%= text_field :board, 'l2' %><%= text_field :board, 'l3' %><%= text_field :board, 'l4' %><br>-->
-                          <!--<%= text_field :board, 'l5' %><%= text_field :board, 'l6' %><%= text_field :board, 'l7' %><%= text_field :board, 'l8' %><br>-->
-                          <!--<%= text_field :board, 'l9' %><%= text_field :board, 'l10' %><%= text_field :board, 'l11' %><%= text_field :board, 'l12' %><br>-->
-                          <!--<%= text_field :board, 'l13' %><%= text_field :board, 'l14' %><%= text_field :board, 'l15' %><%= text_field :board, 'l16' %>-->
-                          
-                          <!--<%= form_tag url_for('/board/tokenize'), method: 'get' do%>-->
-                          <!--  <%= text_field :letters, 'letters' %>-->
-                          <!--  <%= submit_tag 'save changes' %>-->
-                          <!--<% end %>  -->
-                          
+                          <div class = "errors">
+                              <% if notice %>
+                                   <% flash.each do |name, msg| %>
+                                   <%= content_tag :div, msg, class: "words" %>
+                                   <% end %>
+                               <% end %>
+                          </div>
+                           
+                         <div class = "paragraph">
+                             <div class= words>
+                                  <p>Input letters into the text boxes exactly as they appear on your Boggle board, then click submit.
+                                  After submitting <br>your letters you will be navigated to page containing all possible words from the set
+                                  of submitted letters.</p>
+                              </div>
+                         </div>
                           <br>
                           <br>
                           
-                          <!--<%= submit_tag 'Save Changes' %>-->
+                          <%= submit_tag 'Save Changes' %>
                           
-                          
+            
                           <!--<% end %>-->
-                          
-                          <!--<%= debug (params) %>-->
+                     
+                          <%= debug (params) %>
                           
                         <% end %>
                 </div>
@@ -118,5 +125,9 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+    <% end %>
     
+    <%= flash[:notice] if flash[:notice] %>
+    "Current number of Games" <%= Game.all.count %>
+    "GAME"<%= Game.find_by_id(30).f1.nil? %>
 </body>

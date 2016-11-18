@@ -1,4 +1,3 @@
-
 def create_visitor
   @visitor ||= {  :email => "example@example.com",
     :password => "changeme", :password_confirmation => "changeme" }
@@ -76,6 +75,14 @@ end
 Given /^I am not authenticated$/ do
     
 end
+
+### Iteration 2 board steps ###
+
+Given /^I have already signed in$/ do 
+  create_user
+  sign_in
+end  
+
 
 
 ### WHEN ###
@@ -191,6 +198,13 @@ When /^I am on password reset page$/ do
   visit  '/users/password/new'
 end
 
+### Iteration 2 board steps WHEN ###
+
+When /^I am on the home page$/ do
+  visit '/'
+end
+
+
 ### THEN ###
 Then /^I should be signed in$/ do
   page.should have_content "Logout"
@@ -279,3 +293,26 @@ And /^I give it invalid email and submit$/ do
   fill_in "user_email", :with => "ifnfiaenjfea@22233.com"
   click_button "Send"
 end
+
+Then /^I see the save game tab$/ do 
+  page.shoud have_link("Save Game", :href => "#")
+end
+  
+And /^I see the new game tab$/ do 
+  page.shoud have_link("New Game", :href => "#")
+end
+
+And /^I see the view saved game tab$/ do 
+  page.shoud have_link("View Saved Game", :href => "#")
+end
+
+And /^I see the logout tab$/ do 
+  page.shoud have_link("Logout", :href => "/users/sign_out")
+end
+  
+  
+  
+  
+  
+  
+  

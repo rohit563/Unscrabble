@@ -2,7 +2,7 @@
 <body id = "login">
   <div class="wrapper">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-      <h1 class="form-signin-heading">Un-Scrabble</h1>
+      <h1 class="form-signin-heading">Un-Boggle</h1>
       <div class="field">
         <!--<%= f.label :email, 'Email' %><br />-->
         <%= f.email_field :email, autofocus: true, placeholder: "Email Address", class: 'form-control', id: "email" %>
