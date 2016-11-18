@@ -14,7 +14,7 @@ class HomeController < ApplicationController
    else
         flash[:notice] = "Error: please input a letter into every box"
        end
-       redirect_to "http://unscrabbling-rohit-banda.c9users.io:8080/"
+       redirect_to :back
         # redirect_to :back
     end
     
