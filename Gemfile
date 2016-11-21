@@ -38,6 +38,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'foreman'
+  gem 'shoulda-matchers'
 end
 
 gem 'bootstrap-sass'

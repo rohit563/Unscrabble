@@ -18,7 +18,16 @@ FactoryGirl.define do
     f16 "l"
   end
   factory :user do
-    email 'example@example.com'
+    email 'afoajawgonn@asf2r.com'
+    password 'changeme'
+    password_confirmation 'changeme'
+    # required if the Devise Confirmable module is used
+    # confirmed_at Time.now
+  end
+  
+  
+  factory :InvalidUser do
+    email ""
     password 'changeme'
     password_confirmation 'changeme'
     # required if the Devise Confirmable module is used

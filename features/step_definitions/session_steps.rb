@@ -82,8 +82,7 @@ Given /^I have already signed in$/ do
   create_user
   sign_in
 end  
-
-
+  
 
 ### WHEN ###
 When /^I sign in with valid credentials$/ do
@@ -204,6 +203,29 @@ When /^I am on the home page$/ do
   visit '/'
 end
 
+When /^I click on the Logout tab$/ do
+  click_link "Logout"
+end
+
+When /^I enter a single letter into each of the game board text fields$/ do
+  fill_in "letters[0]", :with => "a"
+  fill_in "letters[1]", :with => "t"
+  fill_in "letters[2]", :with => "r"
+  fill_in "letters[3]", :with => "a"
+  fill_in "letters[4]", :with => "m"
+  fill_in "letters[5]", :with => "n"
+  fill_in "letters[6]", :with => "g"
+  fill_in "letters[7]", :with => "a"
+  fill_in "letters[8]", :with => "s"
+  fill_in "letters[9]", :with => "l"
+  fill_in "letters[10]", :with => "a"
+  fill_in "letters[11]", :with => "o"
+  fill_in "letters[12]", :with => "a"
+  fill_in "letters[13]", :with => "g"
+  fill_in "letters[14]", :with => "n"
+  fill_in "letters[15]", :with => "d"
+  click_button "Submit"
+end
 
 ### THEN ###
 Then /^I should be signed in$/ do
@@ -295,24 +317,28 @@ And /^I give it invalid email and submit$/ do
 end
 
 Then /^I see the save game tab$/ do 
-  page.shoud have_link("Save Game", :href => "#")
+  page.should have_link("Save Game", :href => "#")
 end
   
 And /^I see the new game tab$/ do 
-  page.shoud have_link("New Game", :href => "#")
+  page.should have_link("New Game", :href => "#")
 end
 
 And /^I see the view saved game tab$/ do 
-  page.shoud have_link("View Saved Game", :href => "#")
+  page.should have_link("View Saved Game", :href => "#")
 end
 
 And /^I see the logout tab$/ do 
-  page.shoud have_link("Logout", :href => "/users/sign_out")
+  page.should have_link("Logout", :href => "/users/sign_out")
 end
   
-  
-  
-  
+Then /^I am redirected to the sign in page$/ do 
+  page.should have_content "Signed out successfully"
+end  
+
+Then /^I should see current number of games$/ do 
+  page.should have_content "Current number of Games"
+end  
   
   
   
