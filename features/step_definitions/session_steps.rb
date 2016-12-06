@@ -207,7 +207,7 @@ When /^I click on the Logout tab$/ do
   click_link "Logout"
 end
 
-When /^I enter a single letter into each of the game board text fields$/ do
+When /^I enter a single letter into each of the game board text fields then press the submit button$/ do
   fill_in "letters[0]", :with => "a"
   fill_in "letters[1]", :with => "t"
   fill_in "letters[2]", :with => "r"
@@ -225,6 +225,10 @@ When /^I enter a single letter into each of the game board text fields$/ do
   fill_in "letters[14]", :with => "n"
   fill_in "letters[15]", :with => "d"
   click_button "Submit"
+end
+
+When /^I click on a specific saved game$/ do 
+  click_button "View Saved Game"
 end
 
 ### THEN ###
@@ -316,7 +320,7 @@ And /^I give it invalid email and submit$/ do
   click_button "Send"
 end
 
-Then /^I see the save game tab$/ do 
+Then /^I see the Save Game Tab$/ do 
   page.should have_link("Save Game", :href => "#")
 end
   

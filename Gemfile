@@ -39,6 +39,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'foreman'
   gem 'shoulda-matchers'
+  gem 'unirest'
 end
 
 gem 'bootstrap-sass'
@@ -46,6 +47,8 @@ gem 'bootstrap-sass'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+    gem 'unirest'
+
 end
 
   

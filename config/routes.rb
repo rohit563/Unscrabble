@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    authenticated :user do
      root 'home#index', as: :authenticated_root
      post '/home/tokenize' => 'home#tokenize'
+     get '/home/solve' => 'home#solve'
      # get '/home' => 'home#submit'
    end
   
