@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @game =  Game.find_by_id(params[:game])
     
     @letters= {"0"=> @game.f1, "1"=> @game.f2, "2"=> @game.f3, "3"=>@game.f4, 
-        "4" =>@game.f5, "5"=> @game.f6, "6"=> @game.f7, "7"=> @game.f8,"8"=> @game.f9,"9"=> @game.f8,"10"=> @game.f11,
+        "4" =>@game.f5, "5"=> @game.f6, "6"=> @game.f7, "7"=> @game.f8,"8"=> @game.f9,"9"=> @game.f10,"10"=> @game.f11,
         "11"=> @game.f12,"12"=> @game.f13,"13"=> @game.f14,"14"=> @game.f15,"15"=> @game.f16
     }
     @letter ="wow"
@@ -22,6 +22,9 @@ class HomeController < ApplicationController
               }
               
     @answers = @apirequest.body
+    @answers = @answers.sort_by(&:length)
+    @answers = @answers.reverse!
+    # @answers.to_s.gsub!(/[!@%&"]/,'')
   end
   
 
