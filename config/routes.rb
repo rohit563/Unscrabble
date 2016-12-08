@@ -5,7 +5,12 @@ Rails.application.routes.draw do
    authenticated :user do
      root 'home#index', as: :authenticated_root
      post '/home/tokenize' => 'home#tokenize'
-     get '/home/solve' => 'home#solve'
+     get '/home/solvedGame' => 'home#solvedGame'
+     get '/home/deleteGame' => 'home#deleteGame'
+     get '/home/saved' => 'home#saved'
+     get '/home/saved/:id' => 'home#show', as: 'game'
+  
+     
      # get '/home' => 'home#submit'
    end
   

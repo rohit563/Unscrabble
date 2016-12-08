@@ -1,0 +1,74 @@
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<body id = "home">
+    <% if user_signed_in? %>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <!--<li class="sidebar-brand">-->
+                <!--    <a href="#">-->
+                <!--        Home-->
+                <!--    </a>-->
+                <!--</li>-->
+                <br>
+                </br>
+                <li>
+                    <!--<a href="#">View Saved Games</a> home#saved-->
+                    <%= link_to('View Saved', home_saved_url, :method => :get) %>
+                </li>
+                <li>
+                    <!--<a href="#">New Game</a>-->
+                    <%= link_to 'New Game', home_index_url %>
+                </li>
+                <li>
+                    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                    <!--<a href="#">Contact</a>-->
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <table class="table-fill">
+              <tr>
+                <th class="text-center">Game Name</th>
+                <th class="text-center">Creation Date</th>
+                <th class="text-center">Updated At</th>
+                <th class="text-center">Delete</th>
+
+              </tr>
+                
+                <% Game.all.each do |game| %>
+                    <% if game.user_id == current_user.id%>
+                       <!--<li><%= link_to home_saved_url %>zz</li>-->
+                        <tr >
+                            <td data-link="<%= home_solvedGame_path(:game => game.id) %>" class="text-center"><%= game.gameName.titleize %></td>
+                            <td data-link="<%= home_solvedGame_path(:game => game.id) %>" class="text-center"><%= game.created_at %></td>
+                            <td data-link="<%= home_solvedGame_path(:game => game.id) %>" class="text-center"><%= game.updated_at %></td>
+                            <td data-link="<%= home_deleteGame_path(:game => game.id) %>"class="text-center">Delete</td>
+                        </tr>
+                        
+                    <% end %>
+                <% end %>
+
+            </table>
+            
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+     <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <% end %>
+    
+    <%= flash[:notice] if flash[:notice] %>
+    "Current number of Games" <%= Game.all.count %>
+</body>

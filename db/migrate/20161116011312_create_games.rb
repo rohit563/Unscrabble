@@ -17,7 +17,6 @@ class CreateGames < ActiveRecord::Migration
       t.string :f14
       t.string :f15
       t.string :f16
-
       t.timestamps null: false
     end
   end

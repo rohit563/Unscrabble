@@ -6,20 +6,22 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <!--<li class="sidebar-brand">-->
-                <!--    <a href="#">-->
-                <!--        Home-->
-                <!--    </a>-->
-                <!--</li>-->
-                <br>
-                </br>
-                <li>
-                    <!--<a href="#">View Saved Games</a> home#saved-->
-                    <%= link_to('View Saved', home_saved_url, :method => :get) %>
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Home
+                    </a>
                 </li>
                 <li>
-                    <!--<a href="#">New Game</a>-->
-                    <%= link_to 'New Game', home_index_url %>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">New Game</a>
+                </li>
+                <li>
+                    <a href="#">View Saved Game</a>
+                </li>
+                <li>
+                    <a href="#">Save Game</a>
                 </li>
                 <li>
                     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -78,18 +80,11 @@
                               <input type = "text" id = "text1" value = "<%= %>" size = "4" maxlength= "1"name= "letters[15]"  style="text-align:center;" /> 
                             </div>
                           </div>
-                          <h5><center><font color="white">Game Name:</center></h5></font>
-                          <div class = "holder">
-                              <div class = "cell">
-                                  <input type = "text" id = "game" value = "<%= %>" size = "10" maxlength = "8" name = "game" style="text-align:center;" />
-                              </div>
-                          </div>
                           <div class = "button">
                               <%= button_to 'Submit', :controller =>'home', :action => 'tokenize', :method => :post, :remote => true %>
                               <!--<input type="submit" value="Submit" onclick="return getLetters();">-->
                           </div>
                           
-                          <% if notice %>
                           <div class = "errors">
                               <% if notice %>
                                    <% flash.each do |name, msg| %>
@@ -97,7 +92,7 @@
                                    <% end %>
                                <% end %>
                           </div>
-                                <% end %>
+                           
                          <div class = "paragraph">
                              <div class= words>
                                   <p>Input letters into the text boxes exactly as they appear on your Boggle board, then click submit.
@@ -108,9 +103,13 @@
                           <br>
                           <br>
                           
-                     
+                          <%= submit_tag 'Save Changes' %>
+                 
+                          <%= link_to 'Solve', home_tokenize_path, method: :get %>
                           <!--<% end %>-->
                      
+                          <%= debug (params) %>
+                      
                         <% end %>
                 </div>
             </div>
@@ -127,5 +126,7 @@
     });
     </script>
     <% end %>
-
+    
+    <%= flash[:notice] if flash[:notice] %>
+    "Current number of Games" <%= Game.all.count %>
 </body>

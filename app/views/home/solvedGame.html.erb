@@ -1,0 +1,100 @@
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<body id = "home">
+    <% if user_signed_in? %>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <br>
+                </br>
+                <li>
+                    <!--<a href="#">View Saved Games</a> home#saved-->
+                    <%= link_to('View Saved', home_saved_url, :method => :get) %>
+                </li>
+                <li>
+                    <!--<a href="#">New Game</a>-->
+                    <%= link_to 'New Game', home_index_url %>
+                </li>
+                <li>
+                    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                    <!--<a href="#">Contact</a>-->
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class = "header">
+                            <h1>Solutuon for [<%=@game.gameName%>]!</h1>
+                          </div>
+                        
+                                              <%= form_tag ('/home/tokenize') do %>
+
+                          
+                          <div class = "holder">
+                            <div class = "cells">
+                              <input type = "text" id = "text1" value = <%= @letters["0"] %> size = "4" maxlength= "1" name= "letters[0]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["1"] %> size = "4" maxlength= "1" name= "letters[1]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["2"] %> size = "4" maxlength= "1" name= "letters[2]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["3"] %> size = "4" maxlength= "1" name= "letters[3]" style="text-align:center;" readonly/> 
+                            </div>
+                          </div>
+                           <div class = "holder">
+                            <div class = "celss">
+                              <input type = "text" id = "text1" value = <%= @letters["4"] %> size = "4" maxlength= "1" name= "letters[4]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["5"] %> size = "4" maxlength= "1" name= "letters[5]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["6"] %> size = "4" maxlength= "1" name= "letters[6]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = <%= @letters["7"] %> size = "4" maxlength= "1" name= "letters[7]" style="text-align:center;" readonly/> 
+                            </div>
+                          </div>
+                           <div class = "holder">
+                            <div class = "cells">
+                              <input type = "text" id = "text1" value = "<%=@letters["8"] %>" size = "4" maxlength= "1" name= "letters[8]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%=@letters["9"] %>" size = "4" maxlength= "1" name= "letters[9]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%=@letters["10"] %>" size = "4" maxlength= "1" name= "letters[10]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%= @letters["11"]%>" size = "4" maxlength= "1" name= "letters[11]" style="text-align:center;" readonly/> 
+                            </div>
+                          </div>
+                           <div class = "holder">
+                            <div class = "cell">
+                              <input type = "text" id = "text1" value = <%= @letters["12"] %> size = "4" maxlength= "" name= "letters[12]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%=@letters["13"] %>" size = "4" maxlength= "1" name= "letters[13]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%=@letters["14"] %>" size = "4" maxlength= "1" name= "letters[14]" style="text-align:center;" readonly/> 
+                              <input type = "text" id = "text1" value = "<%= @letters["15"]%>" size = "4" maxlength= "1"name= "letters[15]"  style="text-align:center;" readonly/> 
+                            </div>
+                          </div>
+                          <div class = "button">
+                          </div>
+                          
+                       
+                      
+                 
+                          <% end %>
+                     
+                        <% end %>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+         <h1 style = "color:white">
+             Answers
+         </h1>
+         <p>
+             <%= @answers %>
+         </p>
+    </div>
+    <!-- /#wrapper -->
+     <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+   
+

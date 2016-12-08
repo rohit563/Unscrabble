@@ -82,7 +82,10 @@ Given /^I have already signed in$/ do
   create_user
   sign_in
 end  
-  
+
+And /^I am on the home page$/ do
+  page.should have_content "Welcome to the Boggle Solver"
+end
 
 ### WHEN ###
 When /^I sign in with valid credentials$/ do
@@ -231,6 +234,10 @@ When /^I click on a specific saved game$/ do
   click_button "View Saved Game"
 end
 
+When /^I click on the delete game button$/ do
+  click_link "Delete Game"
+end
+
 ### THEN ###
 Then /^I should be signed in$/ do
   page.should have_content "Logout"
@@ -344,5 +351,12 @@ Then /^I should see current number of games$/ do
   page.should have_content "Current number of Games"
 end  
   
-  
+Then /^The game is loaded onto the screen$/ do
+  page.should have_content ""
+end
+
+Then /^the game is removed from the database$/ do
+  page.should have_content "Game deleted"
+end  
+
   
