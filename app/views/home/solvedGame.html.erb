@@ -86,9 +86,57 @@
              Answers
              </div>
          <div class = "paragraph">
-             <div class = "words">
-                 <%= @answers.to_s.gsub!(/"|\[|\]|,/,'') %>
-             </div>
+             <!--<div class = "words">-->
+            <table class="table2">
+                <tr>
+                    
+                    
+                    
+                    <th> Seven+ </th>
+                    <th> Six </th>
+                    <th> Five </th>
+                    <th> Four </th>
+                    
+                    <th> Three </th>
+                    
+                </tr>
+                
+                <tr>
+                   
+                    <td>
+                        <%@answersLong.each do |word|%>
+                            <%= word%><br/>
+                        <%end%>
+                    </td>
+                    <td>
+                        <%@answersSix.each do |word|%>
+                            <%=word%><br/>
+                        <%end%>
+                    </td>
+                    <td>
+                        <%@answersFive.each do |word|%>
+                            <%=word%><br/>
+                        <%end%>
+                    </td>
+                    <td>
+                        <%@answersFour.each do |word|%>
+                            <%=word%><br/>
+                        <%end%>
+                    </td>
+                   
+                    
+                    <td>
+                        <%@answersThree.each do |word|%>
+                            <%=word%><br/>
+                        <%end%>
+                    </td>
+                    
+                </tr>
+                
+            
+            
+            </table>
+             <!--</div>-->
          </div>
         </div>
     </div>

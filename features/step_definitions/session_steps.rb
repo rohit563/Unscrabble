@@ -42,6 +42,27 @@ def sign_in
   click_button "Log in"
 end
 
+def create_game
+  
+  fill_in "letters[0]", :with => "a"
+  fill_in "letters[1]", :with => "t"
+  fill_in "letters[2]", :with => "r"
+  fill_in "letters[3]", :with => "a"
+  fill_in "letters[4]", :with => "m"
+  fill_in "letters[5]", :with => "n"
+  fill_in "letters[6]", :with => "g"
+  fill_in "letters[7]", :with => "a"
+  fill_in "letters[8]", :with => "s"
+  fill_in "letters[9]", :with => "l"
+  fill_in "letters[10]", :with => "a"
+  fill_in "letters[11]", :with => "o"
+  fill_in "letters[12]", :with => "a"
+  fill_in "letters[13]", :with => "g"
+  fill_in "letters[14]", :with => "n"
+  fill_in "letters[15]", :with => "d"
+  fill_in "game", :with => "testGame"
+  click_button "Submit"
+end
 ### GIVEN ###
 Given /^I am not signed up as a user$/ do
   visit '/users/sign_up'
@@ -56,7 +77,7 @@ Given /^I am not logged in$/ do
  
 #  visit (destroy_user_session_path, :method => :delete)
 #   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
- 
+
 end
 
 Given /^I exist as a user$/ do
@@ -83,7 +104,14 @@ Given /^I have already signed in$/ do
   sign_in
 end  
 
-And /^I am on the home page$/ do
+
+Given /^I am on the Saved Game page$/ do
+  create_user
+  sign_in
+  create_game
+end
+
+And /^I am viewing the home page$/ do
   page.should have_content "Welcome to the Boggle Solver"
 end
 
@@ -95,7 +123,7 @@ end
 
 When /^I sign out$/ do
   visit '/'
-    click_link "Logout"
+  click_link "Logout"
 end
 
 When /^I sign up with valid user data$/ do
@@ -211,31 +239,21 @@ When /^I click on the Logout tab$/ do
 end
 
 When /^I enter a single letter into each of the game board text fields then press the submit button$/ do
-  fill_in "letters[0]", :with => "a"
-  fill_in "letters[1]", :with => "t"
-  fill_in "letters[2]", :with => "r"
-  fill_in "letters[3]", :with => "a"
-  fill_in "letters[4]", :with => "m"
-  fill_in "letters[5]", :with => "n"
-  fill_in "letters[6]", :with => "g"
-  fill_in "letters[7]", :with => "a"
-  fill_in "letters[8]", :with => "s"
-  fill_in "letters[9]", :with => "l"
-  fill_in "letters[10]", :with => "a"
-  fill_in "letters[11]", :with => "o"
-  fill_in "letters[12]", :with => "a"
-  fill_in "letters[13]", :with => "g"
-  fill_in "letters[14]", :with => "n"
-  fill_in "letters[15]", :with => "d"
-  click_button "Submit"
+  create_game
+  click_link "testGame"
 end
 
-When /^I click on a specific saved game$/ do 
-  click_button "View Saved Game"
+When /^I click View Saved tab$/ do
+  click_link "View Saved"
+end
+
+When /^I click the link to a saved game$/ do 
+  page.should have_content "Creation Date"
+  click_link "testGame"
 end
 
 When /^I click on the delete game button$/ do
-  click_link "Delete Game"
+  click_link "Delete"
 end
 
 ### THEN ###
@@ -328,16 +346,16 @@ And /^I give it invalid email and submit$/ do
 end
 
 Then /^I see the Save Game Tab$/ do 
-  page.should have_link("Save Game", :href => "#")
+  page.should have_content "View Saved"
 end
   
 And /^I see the new game tab$/ do 
-  page.should have_link("New Game", :href => "#")
+  page.should have_content "New Game"
 end
 
-And /^I see the view saved game tab$/ do 
-  page.should have_link("View Saved Game", :href => "#")
-end
+# And /^I see the view saved game tab$/ do 
+#   page.should have_link("View Saved Game", :href => "#")
+# end
 
 And /^I see the logout tab$/ do 
   page.should have_link("Logout", :href => "/users/sign_out")
@@ -359,4 +377,18 @@ Then /^the game is removed from the database$/ do
   page.should have_content "Game deleted"
 end  
 
+Then /^I am redirected to that specific users saved games$/ do 
+  page.should have_content "Game Name"
+  page.should have_content "Creation Date"
+end
+
+Then /^the game is loaded on the game load page$/ do
+  
+end
+
+  
+  
+  
+  
+  
   
