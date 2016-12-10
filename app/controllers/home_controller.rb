@@ -5,17 +5,15 @@ class HomeController < ApplicationController
   def solvedGame
     @game =  Game.find_by_id(params[:game])
     
-    @letters= {"0"=> @game.f1, "1"=> @game.f2, "2"=> @game.f3, "3"=>@game.f4, "4" =>@game.f5, "5"=> @game.f6, "6"=> @game.f7, "7"=> @game.f8,"8"=> @game.f9,"9"=> @game.f10 , "10"=> @game.f11,"11"=> @game.f12,"12"=> @game.f13,"13"=> @game.f14,"14"=> @game.f15,"15"=> @game.f16    }
+    letters= {"0"=> @game.f1, "1"=> @game.f2, "2"=> @game.f3, "3"=>@game.f4, "4" =>@game.f5, "5"=> @game.f6, "6"=> @game.f7, "7"=> @game.f8,"8"=> @game.f9,"9"=> @game.f10 , "10"=> @game.f11,"11"=> @game.f12,"12"=> @game.f13,"13"=> @game.f14,"14"=> @game.f15,"15"=> @game.f16    }
 
     @words = @game.f1+@game.f2+@game.f3+@game.f4+@game.f5+@game.f6+@game.f7+@game.f8+@game.f9+@game.f10+@game.f11+@game.f12+@game.f13+@game.f14+@game.f15+@game.f16
     
-       require'unirest'#used for http request to api
-            @apirequest=Unirest.get "https://codebox-boggle-v1.p.mashape.com/"+@letters.values.join.to_s, headers:{"X-Mashape-Key" => "dD07jz0voGmshZW6IXL7Ig9Jp883p1OzRPbjsnqogyFRjeOqfX","Accept" => "text/plain"}
-              
-    @answers = @apirequest.body.sort_by(&:length).reverse!
+    require'unirest'#used for http request to api
+    apirequest=Unirest.get "https://codebox-boggle-v1.p.mashape.com/"+letters.values.join.to_s, headers:{"X-Mashape-Key" => "dD07jz0voGmshZW6IXL7Ig9Jp883p1OzRPbjsnqogyFRjeOqfX","Accept" => "text/plain"}
+    @answers = apirequest.body.sort_by(&:length).reverse!
     
     @answersLong = [];    @answersSix = [];    @answersFive = [];@answersFour = [];    @answersThree = [];
-    
     @answers.each do |words| 
         if(words.length > 6) 
             @answersLong.push(words)
@@ -36,9 +34,7 @@ class HomeController < ApplicationController
     
     # @answers.to_s.gsub!(/[!@%&"]/,'')
   end
-  
-
-def deleteGame
+ def deleteGame
 Game.destroy(params[:game])
 redirect_to :back
 end

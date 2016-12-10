@@ -48799,3 +48799,294 @@ Completed 200 OK in 398ms (Views: 38.4ms | ActiveRecord: 0.2ms)
 
 Started GET "/assets/home.self-9902af0f38b0430772abfb769c18fb08d15328022179b8cdf541619fd7600e80.css?body=1" for 173.28.192.130 at 2016-12-09 04:47:37 +0000
 Cannot render console from 173.28.192.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 50.82.36.156 at 2016-12-09 05:10:14 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.82.36.156 at 2016-12-09 05:10:14 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 187ms (Views: 187.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/tokenize" for 50.82.36.156 at 2016-12-09 05:10:32 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by HomeController#tokenize as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lY3REAkQPpTjkdfQ9djoWe4WSdyLabhUv0EN5yYKXDlUTP+WdbmlLzopVCRGo6M/u9KudiIJAaSo9pmAUV3kpQ==", "letters"=>{"0"=>"a", "1"=>"s", "2"=>"d", "3"=>"f", "4"=>"g", "5"=>"j", "6"=>"j", "7"=>"j", "8"=>"k", "9"=>"h", "10"=>"g", "11"=>"f", "12"=>"e", "13"=>"e", "14"=>"d", "15"=>"g"}, "game"=>"fuck"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "user_id", "gameName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["f1", "a"], ["f2", "s"], ["f3", "d"], ["f4", "f"], ["f5", "g"], ["f6", "j"], ["f7", "j"], ["f8", "j"], ["f9", "k"], ["f10", "h"], ["f11", "g"], ["f12", "f"], ["f13", "e"], ["f14", "e"], ["f15", "d"], ["f16", "g"], ["user_id", 2], ["gameName", "fuck"], ["created_at", "2016-12-09 05:10:32.190516"], ["updated_at", "2016-12-09 05:10:32.190516"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+Redirected to https://unscrabbling-rohit-banda.c9users.io/home/solvedGame?game=57
+Completed 302 Found in 88ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/home/solvedGame?game=57" for 50.82.36.156 at 2016-12-09 05:10:32 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by HomeController#solvedGame as HTML
+  Parameters: {"game"=>"57"}
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered home/solvedGame.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 2079ms (Views: 1716.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/saved" for 50.82.36.156 at 2016-12-09 05:10:41 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by HomeController#saved as HTML
+  Parameters: {"authenticity_token"=>"M6R4YmluvxwyMTiDZmllxCgUaZeI0mFj10ZHDvz4GtTyZVbkFcckp+uJu3fVEi6ifdCOPSGy2JPA8dNpi6+iSA=="}
+  [1m[35mGame Load (9.8ms)[0m  SELECT "games".* FROM "games"
+  [1m[36m (3.2ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  Rendered home/saved.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 104ms (Views: 90.5ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/home/solvedGame?game=57" for 50.82.36.156 at 2016-12-09 05:10:44 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by HomeController#solvedGame as HTML
+  Parameters: {"game"=>"57"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered home/solvedGame.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 326ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/saved" for 50.82.36.156 at 2016-12-09 05:10:48 +0000
+Cannot render console from 50.82.36.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by HomeController#saved as HTML
+  [1m[36mGame Load (1.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "games"
+  Rendered home/saved.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 173.28.192.43 at 2016-12-09 05:17:32 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 7]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/tokenize" for 173.28.192.43 at 2016-12-09 05:18:03 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 7]]
+Processing by HomeController#tokenize as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KjLxMoZ9R86MwSlyjpzTGBOXgvRc4HU6nQKGlpFDr5I0SqBF3LiFeHKJj+9HfHu8i1ug/SakedwEK0tTo+UVhA==", "letters"=>{"0"=>"r", "1"=>"s", "2"=>"t", "3"=>"l", "4"=>"a", "5"=>"e", "6"=>"i", "7"=>"m", "8"=>"b", "9"=>"e", "10"=>"r", "11"=>"t", "12"=>"s", "13"=>"e", "14"=>"l", "15"=>"t"}, "game"=>"KUHHHHHLLLLL"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "games" ("f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "user_id", "gameName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["f1", "r"], ["f2", "s"], ["f3", "t"], ["f4", "l"], ["f5", "a"], ["f6", "e"], ["f7", "i"], ["f8", "m"], ["f9", "b"], ["f10", "e"], ["f11", "r"], ["f12", "t"], ["f13", "s"], ["f14", "e"], ["f15", "l"], ["f16", "t"], ["user_id", 7], ["gameName", "KUHHHHHLLLLL"], ["created_at", "2016-12-09 05:18:03.386921"], ["updated_at", "2016-12-09 05:18:03.386921"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/home/solvedGame?game=58
+Completed 302 Found in 29ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/home/solvedGame?game=58" for 173.28.192.43 at 2016-12-09 05:18:03 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 7]]
+Processing by HomeController#solvedGame as HTML
+  Parameters: {"game"=>"58"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 58]]
+  Rendered home/solvedGame.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 516ms (Views: 155.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/solvedGame?game=58" for 173.28.192.43 at 2016-12-09 05:21:48 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 7]]
+Processing by HomeController#solvedGame as HTML
+  Parameters: {"game"=>"58"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 58]]
+  Rendered home/solvedGame.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 685ms (Views: 296.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/saved" for 173.28.192.43 at 2016-12-09 05:22:02 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 7]]
+Processing by HomeController#saved as HTML
+  Parameters: {"authenticity_token"=>"5PW4Be3OdWRLtPmqNyZSMOlSGeAQKyPNVhVVODIITu76jelytwu30rX8Xzf+xvqUcZ476WpvLyvPPJj9AK70+A=="}
+  [1m[36mGame Load (2.4ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "games"
+  Rendered home/saved.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 106ms (Views: 103.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/home/solvedGame?game=53" for 173.28.192.43 at 2016-12-09 05:22:04 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 7]]
+Processing by HomeController#solvedGame as HTML
+  Parameters: {"game"=>"53"}
+  [1m[35mGame Load (0.2ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 53]]
+  Rendered home/solvedGame.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 505ms (Views: 135.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/saved" for 173.28.192.43 at 2016-12-09 05:22:39 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 7]]
+Processing by HomeController#saved as HTML
+  Parameters: {"authenticity_token"=>"76AssHEbKjIlh5BpeV+rIqskptuAtQUT9vJY5byNz4Tx2H3HK97ohNvPNvSwvwOGM+iE0vrxCfVv25Ugjit1kg=="}
+  [1m[35mGame Load (2.6ms)[0m  SELECT "games".* FROM "games"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  Rendered home/saved.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 157ms (Views: 153.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/home/index" for 173.28.192.43 at 2016-12-09 05:22:41 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 7]]
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 297ms (Views: 293.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.43 at 2016-12-09 05:22:44 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"S3locaRc3R2okDQUisSz1xWuD1glU4diGaArjdN/5WVVATkG/pkfq1bYkolDJBtzjWItUV8Xi4SAieZI4dlfcw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.192.43 at 2016-12-09 05:22:45 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 156ms (Views: 147.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.43 at 2016-12-09 05:22:54 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 241ms (Views: 234.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.43 at 2016-12-09 05:23:22 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 152ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 173.28.192.43 at 2016-12-09 05:23:26 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ST64/+kSWx7c5JBJ0qPM0o44jv9f0e7YcmXSEs9MsSJv0yW6Z0zLNb2EIP41HrKCTf0j/guCdhQRTiHn6k7RcA==", "user"=>{"email"=>"js2@gmail.com"}, "commit"=>"Send"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "js2@gmail.com"]]
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 173.28.192.43 at 2016-12-09 05:23:37 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 173.28.192.43 at 2016-12-09 05:23:39 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 173.28.192.43 at 2016-12-09 05:23:47 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lwyNVPcZgq7e7MNw2LqRK/q78tXBsCR+sKIaHUpUyRix4RAReUcShb+Mc8c/B+97OX5f1JXjvLLTienob1apSg==", "user"=>{"email"=>"stegerjohn@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'stegerjohn@gmail.com' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "stegerjohn@gmail.com"], ["encrypted_password", "$2a$11$tdd4aZiJPH/8ymfWeiivW.9cnDrde6b46pmBhfcytT6p6YE7JrnO6"], ["created_at", "2016-12-09 05:23:47.223783"], ["updated_at", "2016-12-09 05:23:47.223783"]]
+  [1m[35m (12.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-12-09 05:23:47.239285"], ["current_sign_in_at", "2016-12-09 05:23:47.239285"], ["last_sign_in_ip", "173.28.192.43"], ["current_sign_in_ip", "173.28.192.43"], ["sign_in_count", 1], ["updated_at", "2016-12-09 05:23:47.240263"], ["id", 8]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 174ms (ActiveRecord: 22.8ms)
+
+
+Started GET "/" for 173.28.192.43 at 2016-12-09 05:23:47 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 173.28.192.43 at 2016-12-09 05:23:49 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mcBLH/VqrBuBV/EmmFZAUt06631jCzsOnLOGvDkMxk6/LdZaezQ8MOA3QZF/6z4CHv9GfDdYo8L/mHVJHA6mHA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://unscrabbling-rohit-banda.c9users.io/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 173.28.192.43 at 2016-12-09 05:23:49 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 173.28.192.43 at 2016-12-09 05:23:50 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 286ms (Views: 284.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 173.28.192.43 at 2016-12-09 05:23:55 +0000
+Cannot render console from 173.28.192.43! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnWzI+Y2L/LixfRRlnIC2lANy6Aq5hv05e80xDlt4zpTJCHTjq9BMoRcd8afXAsRhxzDVGc9q6VF5w7cYdNW/g==", "user"=>{"email"=>"stegerjohn@gmail.com"}, "commit"=>"Send"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "stegerjohn@gmail.com"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["reset_password_token", "15ecc48dfb6c7a69aa3349fb34377b6e6e4286d3246fd109579669ab7cc2f297"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "15ecc48dfb6c7a69aa3349fb34377b6e6e4286d3246fd109579669ab7cc2f297"], ["reset_password_sent_at", "2016-12-09 05:23:55.513283"], ["updated_at", "2016-12-09 05:23:55.513802"], ["id", 8]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  Rendered devise/mailer/reset_password_instructions.html.erb (3.5ms)
+
+Devise::Mailer#reset_password_instructions: processed outbound mail in 18.1ms
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 11.3ms)
+
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  app/views/devise/mailer/reset_password_instructions.html.erb:5:in `_app_views_devise_mailer_reset_password_instructions_html_erb__3787170137890880613_29762760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
